@@ -1,0 +1,28 @@
+# Install nltk if not already installed 
+# pip install nltk 
+ 
+import nltk 
+from nltk import word_tokenize 
+from nltk.util import ngrams 
+ 
+# Download resources (run once) 
+nltk.download('punkt') 
+ 
+# Input Text Corpus 
+text = """Natural Language Processing (NLP) is a branch of Artificial Intelligence. 
+It helps computers understand and process human languages.""" 
+ 
+# Step 1: Tokenize into words 
+tokens = word_tokenize(text) 
+ 
+# Step 2: Extract Unigrams 
+unigrams = list(ngrams(tokens, 1)) 
+ 
+# Step 3: Extract Bigrams 
+bigrams = list(ngrams(tokens, 2)) 
+ 
+# Display Results 
+print("Original Text:\n", text) 
+print("\nTokens:\n", tokens) 
+print("\nUnigrams:\n", unigrams) 
+print("\nBigrams:\n", bigrams)
